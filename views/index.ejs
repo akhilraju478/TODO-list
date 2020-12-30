@@ -1,0 +1,46 @@
+<%- include("partials/header") %>
+
+
+    
+      <fieldset class="fset container p-4">
+      <legend class="leg"> TODO LIST </legend>
+    <% tolist.forEach(item => {  %>
+    <div class="container indb mt-2 ">
+      <div class="card-body">
+        <h4 class="card-title"> <%= item.title %></h4>
+        <div class="card-subtitle text-muted mb-1">
+        <%= item.createdAt.toLocaleDateString() %>
+        </div>
+        <div class="card-text  mb-2"> 
+          <%= item.descrip %>  
+        </div>
+        <a href="/show/<%= item._id %>" class="btn btn-primary">show</a>
+        <a href="/del/<%= item._id %>" class="btn btn-danger">delete</a>
+        <a href="/update/<%= item._id %>" class="btn btn-primary">update</a>
+      </div>
+    </div>
+    <% }) %> 
+  </fieldset>
+
+    <!-- <% tolist.forEach(item => {  %>
+      <div class="card mt-2">
+        <div class="card-body">
+          <h4 class="card-title"> <%= item.title %></h4>
+          <div class="card-subtitle text-muted mb-1">
+          <%= item.createdAt.toLocaleDateString() %>
+          </div>
+          <div class="card-text  mb-2"> 
+            <%= item.descrip %>  
+          </div>
+        </div>
+      </div>
+      <% }) %>  -->
+
+
+<%- include("partials/footer") %>
+
+
+</body>
+
+
+</html>

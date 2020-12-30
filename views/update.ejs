@@ -1,0 +1,33 @@
+<%- include("partials/header") %>
+
+    
+        <h2>TO DO LIST</h2>
+        <fieldset class="fset">
+          <legend class="leg ">UPDATE</legend>
+         
+        <form action="/update/<%= id %>" method="POST" class="container pl-5 pr-5">
+            <h3>Add item here</h3>
+
+            <div class="form-group">
+            <label for=nametodo>TITLE</label>
+            <input type="text" size="50" name="title" placeholder="add todo item" class="form-control" value=<%= tolist.title %>>
+          </div>
+          <div class="form-group">
+            <label for=namedesc> DESC </label>
+            <textarea  name="descrip" placeholder="add what todo" class="form-control"><%= tolist.descrip %></textarea>
+          </div>
+
+            <button type="submit" class="btn btn-primary">Update</button><a href="/index" class="float-right btn btn-primary">back</a>
+          </div>
+       
+        </form>
+        </fieldset>
+
+<%- include("partials/footer") %>
+
+
+</body>
+</html>
+
+
+

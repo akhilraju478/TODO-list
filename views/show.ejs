@@ -1,0 +1,28 @@
+<%- include("partials/header") %>
+
+
+    <div class="container mt-5">
+      <h1 class=> TODO LIST </h4>
+
+
+    <div class="card mt-2">
+      <div class="card-body">
+        <h4 class="card-title"> <%= tolist.title %></h4>
+        <div class="card-subtitle text-muted mb-1">
+        <%= tolist.createdAt.toLocaleDateString() %>
+        </div>
+        <div class="card-text  mb-2"> 
+          <%= tolist.descrip %>  
+        </div>
+        
+        
+      </div>
+    </div>
+    <a href="/index" class="btn btn-primary">back</a>
+
+
+
+</div>
+<%- include("partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <fieldset class="fset ">
+    <legend class="leg ">SIGN UP</legend>
+    <div class="log">
+<form action="/sign" method="POST" class="container pl-4 pr-4">
+  
+    <div class="form-group">
+        <label for="username">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+      </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" name="username"  placeholder="Enter your username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+    </div>
+    <div class="form-group">
+      <label for="confirmpassword">Confirm Password</label>
+      <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Enter your password again" required>
+    </div>
+    <button type="submit" id="subb" class="btn btn-primary" disabled >Register</button>
+  </div>
+  </form>
+</fieldset>
+</div>
+
+<script>
+  var passwordField=$('#password');
+  var confirmpasswordField=$('#confirmpassword');
+  passwordField.keyup(()=>{
+    if(passwordField.val() == confirmpasswordField.val()){
+      $('#subb').attr('disabled',false);}
+      else 
+      {$('#subb').attr('disabled',true);}
+    
+  });
+  confirmpasswordField.keyup(()=>{
+    if(passwordField.val() == confirmpasswordField.val()){
+      $('#subb').attr('disabled',false);}
+      else 
+      {$('#subb').attr('disabled',true);}
+  });
+</script>
+<%- include("partials/footer") %>
+
+</body>
+
+
+</html>
+
